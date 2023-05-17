@@ -1,0 +1,16 @@
+<script>
+s = `
+cc = String.fromCharCode;
+bq = cc(96);
+nl = cc(10);
+ltc = cc(60);
+gtc = cc(62);
+lt = "&l" + "t;";
+gt = "&g" + "t;";
+br = ltc + "br" + gtc;
+s1 = lt + "script" + gt + br + "s = ";
+s2 = ";" + br + "eval(s)" + br + lt + "/script" + gt;
+s = s1 + bq + s.replaceAll(nl, br) + bq + s2;
+document.documentElement.innerHTML = s`;
+eval(s)
+</script>
